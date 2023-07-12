@@ -13,6 +13,17 @@ class MyComponent extends React.Component {
         })
     }
 
+    handleChangeLastName = (event) => {
+        this.setState({
+            lastName: event.target.value
+        })
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        console.log('>>> check data input: ', this.state)
+    }
+
     render() {
         console.log('>>> call render: ', this.state)
         return (
@@ -25,9 +36,16 @@ class MyComponent extends React.Component {
                         onChange={(event) => this.handleChangeFirstName(event)}
                     />
                     <br />
-                    <label for="lname">Last name:</label><br />
-                    <input type="text" value="" /><br /><br />
-                    <input type="submit" value="Submit" />
+                    <label htmlFor="lname">Last name:</label><br />
+                    <input
+                        type="text"
+                        value={this.state.lastName}
+                        onChange={(event) => this.handleChangeLastName(event)}
+                    />
+                    <br /><br />
+                    <input type="submit"
+                        onClick={(event) => this.handleSubmit(event)}
+                    />
                 </form>
             </>
         )
