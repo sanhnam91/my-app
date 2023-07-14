@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, DatePicker } from 'antd';
+import './Demo.scss'
 
 class ChildComponent extends React.Component {
     state = {
@@ -29,7 +30,7 @@ class ChildComponent extends React.Component {
                 </div>
                 {showJobs === false ?
                     <div>
-                        <Button type="primary" onClick={() => this.handleShowHide()}>Show</Button>
+                        <Button className='btnShow' type="primary" onClick={() => this.handleShowHide()}>Show</Button>
                     </div>
                     :
                     <>
