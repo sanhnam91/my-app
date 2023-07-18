@@ -26,7 +26,7 @@ class MyComponent extends React.Component {
 
     deleteAJob = (job) => {
         let currentJob = this.state.arrJobs;
-        currentJob = currentJob.filter(item => item.id != job.id);
+        currentJob = currentJob.filter(item => item.id !== job.id);
         this.setState(
             {
                 arrJobs: currentJob
